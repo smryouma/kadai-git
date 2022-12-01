@@ -4,14 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class WarriorTest {
 
     @Test void attackWithWeaponSkillTest() {
-            int enemyHp = 1000;
-            int attack = 100;
-            Warrior demoWarrior = new Warrior("デモ戦士", 1, attack);
-            Enemy slime = new Enemy("スライムもどき", enemyHp, 1);
+            int eHp = 1000;
+            int attackPower = 100;
+            Warrior demoWarrior = new Warrior("デモ戦士", 1, attackPower);
+            Enemy slime = new Enemy("スライムもどき", eHp, 1);
             for(int count = 0; count < 3; count++){
-                enemyHp = slime.hitPoint;
+                eHp = slime.hitPoint;
                 demoWarrior.attackWithWeponSkill(slime);
-                assertEquals(enemyHp - attack*1.5, slime.hitPoint);
+                assertEquals(eHp - attackPower*1.5, slime.hitPoint);
             }
     }
 }
